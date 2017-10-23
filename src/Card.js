@@ -2,9 +2,9 @@ import React from 'react';
 import './Card.css';
 
 
-export default function Card({ todo, toggle, removeTodo }) {
+export default function Card({ todo, toggle, removeTodo }) {        //todo is now an entire object with styles
     return (
-        <div className='card-container'>
+        <div className='card-container' style={{height: todo.style.height, opacity:todo.style.opacity}}>
             <div 
                 onClick={ () => toggle(todo.key) }
                 className={ todo.data.completed ? 'check toggle-green' : 'check' }
